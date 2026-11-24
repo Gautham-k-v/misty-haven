@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Outfit", "Avenir Next", system-ui, sans-serif;
+  --color-forest: #183d32;
+  --color-forest-deep: #102920;
+  --color-olive: #6b8064;
+  --color-cream: #f6f2e8;
+  --color-cream-deep: #ebe4d4;
+  --color-earth: #9a7553;
+  --color-ink: #24302b;
+  --color-line: #e4dccb;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: #183d32;
+  color: #f6f2e8;
+}
+
+:focus-visible {
+  outline: 2px solid #183d32;
+  outline-offset: 3px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.kenburns {
+  animation: kenburns 22s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .kenburns {
+    animation: none;
+  }
+}
